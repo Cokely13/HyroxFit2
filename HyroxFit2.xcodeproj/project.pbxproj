@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3285082C51555700C27545 /* ButtonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285072C51555700C27545 /* ButtonSection.swift */; };
+		3C32850A2C5155BD00C27545 /* ImageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285092C5155BD00C27545 /* ImageSection.swift */; };
+		3C32850C2C515B5000C27545 /* TextSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32850B2C515B5000C27545 /* TextSection.swift */; };
 		3C583CCC2C3446F6000FA7B2 /* HyroxFit2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */; };
 		3C583CCE2C3446F6000FA7B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C583CCD2C3446F6000FA7B2 /* ContentView.swift */; };
 		3C583CD02C3446F8000FA7B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C583CCF2C3446F8000FA7B2 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C3285072C51555700C27545 /* ButtonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSection.swift; sourceTree = "<group>"; };
+		3C3285092C5155BD00C27545 /* ImageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSection.swift; sourceTree = "<group>"; };
+		3C32850B2C515B5000C27545 /* TextSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSection.swift; sourceTree = "<group>"; };
 		3C583CC82C3446F6000FA7B2 /* HyroxFit2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyroxFit2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFit2App.swift; sourceTree = "<group>"; };
 		3C583CCD2C3446F6000FA7B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +59,9 @@
 			children = (
 				3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */,
 				3C583CCD2C3446F6000FA7B2 /* ContentView.swift */,
+				3C3285092C5155BD00C27545 /* ImageSection.swift */,
+				3C3285072C51555700C27545 /* ButtonSection.swift */,
+				3C32850B2C515B5000C27545 /* TextSection.swift */,
 				3C583CCF2C3446F8000FA7B2 /* Assets.xcassets */,
 				3C583CD12C3446F8000FA7B2 /* Preview Content */,
 			);
@@ -138,6 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C583CCE2C3446F6000FA7B2 /* ContentView.swift in Sources */,
+				3C32850A2C5155BD00C27545 /* ImageSection.swift in Sources */,
+				3C32850C2C515B5000C27545 /* TextSection.swift in Sources */,
+				3C3285082C51555700C27545 /* ButtonSection.swift in Sources */,
 				3C583CCC2C3446F6000FA7B2 /* HyroxFit2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
