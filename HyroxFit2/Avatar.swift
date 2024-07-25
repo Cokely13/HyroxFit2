@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 struct Avatar: View {
     let url: String

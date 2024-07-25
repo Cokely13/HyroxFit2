@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 struct WoofPost: View {
     let image: String

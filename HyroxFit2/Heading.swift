@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct Heading: View {
     let text: String
