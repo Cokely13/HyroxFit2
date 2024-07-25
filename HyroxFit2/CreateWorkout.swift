@@ -7,6 +7,7 @@ struct CreateWorkout: View {
     @State private var hundreds: Int = 1
     @State private var tens: Int = 0
     @State private var units: Int = 0
+    @State private var navigateToConfirmation: Bool = false
 
     let exercises = ["Run", "Swim", "Bike", "Ski", "Row"]
     let digits = Array(0...9)
@@ -76,28 +77,34 @@ struct CreateWorkout: View {
             Text("Selected Distance: \(selectedDistance) meters")
                 .font(.headline)
 
-            Button(action: {
-                print("Workout Created: \(workoutName), \(selectedExercise), \(selectedDistance) meters")
-            }) {
-                Text("Create Workout")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(10)
+            NavigationLink(destination: WorkoutCreatedView(), isActive: $navigateToConfirmation) {
+                Button(action: {
+                    navigateToConfirmation = true
+                    print("Workout Created: \(workoutName), \(selectedExercise), \(selectedDistance) meters")
+                }) {
+                    Text("Create Workout")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
             }
             .padding(.top, 20)
 
             Spacer()
         }
         .padding()
+        .navigationBarTitle("Create Workout", displayMode: .inline)
     }
 }
 
 struct CreateWorkout_Previews: PreviewProvider {
     static var previews: some View {
-        CreateWorkout()
+        NavigationView {
+            CreateWorkout()
+        }
     }
 }
 
