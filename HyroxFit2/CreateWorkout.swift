@@ -79,6 +79,7 @@ struct CreateWorkout: View {
 
             NavigationLink(destination: WorkoutCreatedView(), isActive: $navigateToConfirmation) {
                 Button(action: {
+                    saveWorkout()
                     navigateToConfirmation = true
                     print("Workout Created: \(workoutName), \(selectedExercise), \(selectedDistance) meters")
                 }) {
@@ -97,6 +98,25 @@ struct CreateWorkout: View {
         }
         .padding()
         .navigationBarTitle("Create Workout", displayMode: .inline)
+    }
+
+    func saveWorkout() {
+        let workout = Workout(id: UUID(), name: workoutName, exercise: selectedExercise, distance: selectedDistance)
+        
+        var savedWorkouts = loadWorkouts()
+        savedWorkouts.append(workout)
+        
+        if let encoded = try? JSONEncoder().encode(savedWorkouts) {
+            UserDefaults.standard.set(encoded, forKey: "savedWorkouts")
+        }
+    }
+    
+    func loadWorkouts() -> [Workout] {
+        if let savedWorkoutsData = UserDefaults.standard.data(forKey: "savedWorkouts"),
+           let savedWorkouts = try? JSONDecoder().decode([Workout].self, from: savedWorkoutsData) {
+            return savedWorkouts
+        }
+        return []
     }
 }
 

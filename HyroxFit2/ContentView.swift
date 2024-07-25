@@ -1,39 +1,3 @@
-//import SwiftUI
-//import Foundation
-//
-//struct ContentView: View {
-//    var body: some View {
-//        VStack {
-//            Heading(text: "Trending Woofs")
-//            
-//            ScrollView(.horizontal) {
-//                HStack {
-//                    ForEach(data.woofs, id: \.id) { woof in
-//                        WoofCard(name: woof.name, avatar: woof.avatar)
-//                    }
-//                }
-//            }
-//            
-//            Heading(text: "New Posts")
-//            
-//            ScrollView {
-//                VStack {
-//                    ForEach(data.posts, id: \.id) { post in
-//                        WoofPost(image: post.image, title: post.title, description: post.description)
-//                    }
-//                }
-//            }
-//        }
-//        .padding()
-//    }
-//}
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
-
 import SwiftUI
 
 struct ContentView: View {
@@ -49,6 +13,16 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }
                 .padding()
+
+                NavigationLink(destination: SavedWorkoutsView()) {
+                    Text("View Saved Workouts")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(10)
+                }
+                .padding()
             }
             .navigationTitle("HyroxFit2")
         }
@@ -60,5 +34,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
 
