@@ -6,11 +6,22 @@
 //
 
 import Foundation
-import Foundation
 
 struct Workout: Codable, Identifiable {
     var id: UUID
     var name: String
     var exercise: String
     var distance: Int
+    var results: [Result] = []
+}
+
+struct Result: Codable, Identifiable {
+    var id: UUID
+    var time: Time
+}
+
+struct Time: Codable {
+    var hours: Int
+    var minutes: Int
+    var seconds: Int
 }

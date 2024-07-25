@@ -4,8 +4,6 @@
 //
 //  Created by Ryan Cokely on 7/25/24.
 //
-
-import Foundation
 import SwiftUI
 
 struct SavedWorkoutsView: View {
@@ -19,11 +17,13 @@ struct SavedWorkoutsView: View {
                 .padding(.top)
 
             List(workouts) { workout in
-                VStack(alignment: .leading) {
-                    Text(workout.name)
-                        .font(.headline)
-                    Text("Exercise: \(workout.exercise)")
-                    Text("Distance: \(workout.distance) meters")
+                NavigationLink(destination: EnterResultsView(workout: workout)) {
+                    VStack(alignment: .leading) {
+                        Text(workout.name)
+                            .font(.headline)
+                        Text("Exercise: \(workout.exercise)")
+                        Text("Distance: \(workout.distance) meters")
+                    }
                 }
             }
         }
