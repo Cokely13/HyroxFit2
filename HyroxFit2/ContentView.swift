@@ -23,6 +23,16 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }
                 .padding()
+
+                NavigationLink(destination: ResultsView()) {
+                    Text("View Results")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                }
+                .padding()
             }
             .navigationTitle("HyroxFit2")
         }

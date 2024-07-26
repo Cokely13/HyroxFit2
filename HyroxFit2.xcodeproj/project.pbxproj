@@ -22,6 +22,7 @@
 		3C3285202C52F03800C27545 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32851F2C52F03800C27545 /* Workout.swift */; };
 		3C3285222C52F09600C27545 /* SavedWorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285212C52F09600C27545 /* SavedWorkoutsView.swift */; };
 		3C3285242C52F49200C27545 /* EnterResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285232C52F49200C27545 /* EnterResultsView.swift */; };
+		3C3285262C52F54300C27545 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285252C52F54300C27545 /* ResultsView.swift */; };
 		3C583CCC2C3446F6000FA7B2 /* HyroxFit2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */; };
 		3C583CCE2C3446F6000FA7B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C583CCD2C3446F6000FA7B2 /* ContentView.swift */; };
 		3C583CD02C3446F8000FA7B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C583CCF2C3446F8000FA7B2 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		3C32851F2C52F03800C27545 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		3C3285212C52F09600C27545 /* SavedWorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWorkoutsView.swift; sourceTree = "<group>"; };
 		3C3285232C52F49200C27545 /* EnterResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterResultsView.swift; sourceTree = "<group>"; };
+		3C3285252C52F54300C27545 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		3C583CC82C3446F6000FA7B2 /* HyroxFit2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyroxFit2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFit2App.swift; sourceTree = "<group>"; };
 		3C583CCD2C3446F6000FA7B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */,
 				3C583CCD2C3446F6000FA7B2 /* ContentView.swift */,
+				3C3285252C52F54300C27545 /* ResultsView.swift */,
 				3C32851B2C52EB2700C27545 /* CreateWorkout.swift */,
 				3C3285212C52F09600C27545 /* SavedWorkoutsView.swift */,
 				3C3285232C52F49200C27545 /* EnterResultsView.swift */,
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C3285122C518ADC00C27545 /* Title.swift in Sources */,
+				3C3285262C52F54300C27545 /* ResultsView.swift in Sources */,
 				3C3285242C52F49200C27545 /* EnterResultsView.swift in Sources */,
 				3C32851C2C52EB2700C27545 /* CreateWorkout.swift in Sources */,
 				3C32851A2C51900500C27545 /* test.swift in Sources */,
