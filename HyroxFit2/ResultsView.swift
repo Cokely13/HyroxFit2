@@ -56,12 +56,6 @@ struct ResultsView: View {
     }
 }
 
-extension Time {
-    var totalSeconds: Int {
-        return hours * 3600 + minutes * 60 + seconds
-    }
-}
-
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         ResultsView()

@@ -1,10 +1,3 @@
-//
-//  EnterResultsView.swift
-//  HyroxFit2
-//
-//  Created by Ryan Cokely on 7/25/24.
-//
-
 import Foundation
 import SwiftUI
 
@@ -14,6 +7,7 @@ struct EnterResultsView: View {
     @State private var hours: Int = 0
     @State private var minutes: Int = 0
     @State private var seconds: Int = 0
+    @State private var navigateToConfirmation: Bool = false
 
     @Environment(\.presentationMode) var presentationMode
 
@@ -60,17 +54,19 @@ struct EnterResultsView: View {
                 .frame(width: 60, height: 150)
             }
 
-            Button(action: {
-                saveResult()
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Enter Results")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(10)
+            NavigationLink(destination: ResultConfirmationView(), isActive: $navigateToConfirmation) {
+                Button(action: {
+                    saveResult()
+                    navigateToConfirmation = true
+                }) {
+                    Text("Enter Results")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
             }
             .padding(.top, 20)
 
@@ -109,3 +105,4 @@ struct EnterResultsView_Previews: PreviewProvider {
         }
     }
 }
+

@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 
 struct ContentView: View {
@@ -30,6 +31,16 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.orange)
+                        .cornerRadius(10)
+                }
+                .padding()
+
+                NavigationLink(destination: RecordsView()) {
+                    Text("View Records")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.purple)
                         .cornerRadius(10)
                 }
                 .padding()
