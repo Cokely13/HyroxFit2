@@ -15,10 +15,12 @@ struct Workout: Codable, Identifiable {
     var results: [Result] = []
 }
 
-struct Result: Codable, Identifiable {
-    var id: UUID
+struct Result: Identifiable, Codable {
+    var id = UUID()
     var time: Time
+    var username: String // Add this field to store the username
 }
+
 
 struct Time: Codable {
     var hours: Int
