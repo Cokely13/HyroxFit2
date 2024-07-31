@@ -30,7 +30,6 @@
 		3C3285302C59A2EA00C27545 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32852F2C59A2EA00C27545 /* LoginView.swift */; };
 		3C3285322C59A30B00C27545 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285312C59A30B00C27545 /* CreateUserView.swift */; };
 		3C3285342C59A36500C27545 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285332C59A36500C27545 /* MainView.swift */; };
-		3C3285362C59A4A600C27545 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285352C59A4A600C27545 /* App.swift */; };
 		3C583CCC2C3446F6000FA7B2 /* HyroxFit2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */; };
 		3C583CCE2C3446F6000FA7B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C583CCD2C3446F6000FA7B2 /* ContentView.swift */; };
 		3C583CD02C3446F8000FA7B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C583CCF2C3446F8000FA7B2 /* Assets.xcassets */; };
@@ -61,7 +60,6 @@
 		3C32852F2C59A2EA00C27545 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3C3285312C59A30B00C27545 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		3C3285332C59A36500C27545 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		3C3285352C59A4A600C27545 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		3C583CC82C3446F6000FA7B2 /* HyroxFit2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyroxFit2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFit2App.swift; sourceTree = "<group>"; };
 		3C583CCD2C3446F6000FA7B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			children = (
 				3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */,
 				3C583CCD2C3446F6000FA7B2 /* ContentView.swift */,
-				3C3285352C59A4A600C27545 /* App.swift */,
 				3C32852D2C59A2C500C27545 /* AuthState.swift */,
 				3C32852F2C59A2EA00C27545 /* LoginView.swift */,
 				3C3285312C59A30B00C27545 /* CreateUserView.swift */,
@@ -222,7 +219,6 @@
 				3C32850A2C5155BD00C27545 /* ImageSection.swift in Sources */,
 				3C3285202C52F03800C27545 /* Workout.swift in Sources */,
 				3C32850C2C515B5000C27545 /* TextSection.swift in Sources */,
-				3C3285362C59A4A600C27545 /* App.swift in Sources */,
 				3C3285342C59A36500C27545 /* MainView.swift in Sources */,
 				3C3285322C59A30B00C27545 /* CreateUserView.swift in Sources */,
 				3C32851E2C52EDD200C27545 /* WorkoutCreatedView.swift in Sources */,
