@@ -30,6 +30,8 @@
 		3C3285302C59A2EA00C27545 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32852F2C59A2EA00C27545 /* LoginView.swift */; };
 		3C3285322C59A30B00C27545 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285312C59A30B00C27545 /* CreateUserView.swift */; };
 		3C3285342C59A36500C27545 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285332C59A36500C27545 /* MainView.swift */; };
+		3C3285382C5A817600C27545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285372C5A817600C27545 /* User.swift */; };
+		3C32853A2C5A81AA00C27545 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3285392C5A81AA00C27545 /* UsersView.swift */; };
 		3C583CCC2C3446F6000FA7B2 /* HyroxFit2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */; };
 		3C583CCE2C3446F6000FA7B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C583CCD2C3446F6000FA7B2 /* ContentView.swift */; };
 		3C583CD02C3446F8000FA7B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C583CCF2C3446F8000FA7B2 /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		3C32852F2C59A2EA00C27545 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3C3285312C59A30B00C27545 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		3C3285332C59A36500C27545 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3C3285372C5A817600C27545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3C3285392C5A81AA00C27545 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		3C583CC82C3446F6000FA7B2 /* HyroxFit2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyroxFit2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFit2App.swift; sourceTree = "<group>"; };
 		3C583CCD2C3446F6000FA7B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,7 +106,9 @@
 				3C32852D2C59A2C500C27545 /* AuthState.swift */,
 				3C32852F2C59A2EA00C27545 /* LoginView.swift */,
 				3C3285312C59A30B00C27545 /* CreateUserView.swift */,
+				3C3285392C5A81AA00C27545 /* UsersView.swift */,
 				3C3285332C59A36500C27545 /* MainView.swift */,
+				3C3285372C5A817600C27545 /* User.swift */,
 				3C3285252C52F54300C27545 /* ResultsView.swift */,
 				3C3285272C5400EC00C27545 /* RecordsView.swift */,
 				3C3285292C54017700C27545 /* TimeExtensions.swift */,
@@ -206,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3285382C5A817600C27545 /* User.swift in Sources */,
 				3C3285122C518ADC00C27545 /* Title.swift in Sources */,
 				3C3285262C52F54300C27545 /* ResultsView.swift in Sources */,
 				3C3285242C52F49200C27545 /* EnterResultsView.swift in Sources */,
@@ -228,6 +235,7 @@
 				3C3285142C518AF500C27545 /* WoofCard.swift in Sources */,
 				3C3285222C52F09600C27545 /* SavedWorkoutsView.swift in Sources */,
 				3C3285282C5400EC00C27545 /* RecordsView.swift in Sources */,
+				3C32853A2C5A81AA00C27545 /* UsersView.swift in Sources */,
 				3C32852A2C54017700C27545 /* TimeExtensions.swift in Sources */,
 				3C32852C2C54048600C27545 /* ResultConfirmationView.swift in Sources */,
 				3C3285102C518AC700C27545 /* Heading.swift in Sources */,

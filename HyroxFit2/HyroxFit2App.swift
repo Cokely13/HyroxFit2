@@ -22,11 +22,13 @@ import SwiftUI
 @main
 struct HyroxFit2App: App {
     @StateObject var authState = AuthState()
+    @StateObject var userData = UserData()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(authState)
+                .environmentObject(userData)
         }
     }
 }

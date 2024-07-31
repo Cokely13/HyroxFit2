@@ -4,6 +4,7 @@ import SwiftUI
 struct CreateUserView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authState: AuthState
+    @EnvironmentObject var userData: UserData
 
     @State private var username: String = ""
     @State private var password: String = ""
@@ -72,7 +73,7 @@ struct CreateUserView: View {
             return
         }
 
-        // Add logic to save the new user, for now, just simulate user creation
+        userData.addUser(username: username)
         authState.isAuthenticated = true
         self.presentationMode.wrappedValue.dismiss()
     }
@@ -82,6 +83,7 @@ struct CreateUserView_Previews: PreviewProvider {
     static var previews: some View {
         CreateUserView()
             .environmentObject(AuthState())
+            .environmentObject(UserData())
     }
 }
 

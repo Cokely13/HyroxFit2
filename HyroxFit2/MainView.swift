@@ -53,6 +53,16 @@ struct MainView: View {
             }
             .padding()
 
+            NavigationLink(destination: UsersView()) {
+                Text("View Users")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.gray)
+                    .cornerRadius(10)
+            }
+            .padding()
+
             Button(action: {
                 authState.isAuthenticated = false
             }) {
@@ -73,5 +83,7 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .environmentObject(AuthState())
+            .environmentObject(UserData())
     }
 }
+
