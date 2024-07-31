@@ -10,4 +10,5 @@ import Combine
 
 class AuthState: ObservableObject {
     @Published var isAuthenticated: Bool = false
+    @Published var username: String? = nil
 }
