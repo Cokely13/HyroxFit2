@@ -16,6 +16,7 @@ struct RecordsView: View {
                     if let record = workout.results.min(by: { $0.time.totalSeconds < $1.time.totalSeconds }) {
                         Section(header: Text(workout.name).font(.headline)) {
                             VStack(alignment: .leading) {
+                                Text("User: \(record.username)")
                                 Text("Exercise: \(workout.exercise)")
                                 Text("Distance: \(workout.distance) meters")
                                 Text("Fastest Time: \(record.time.hours)h \(record.time.minutes)m \(record.time.seconds)s")
@@ -37,6 +38,8 @@ struct RecordsView: View {
         }
     }
 }
+
+
 
 struct RecordsView_Previews: PreviewProvider {
     static var previews: some View {

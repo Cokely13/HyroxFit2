@@ -17,7 +17,9 @@ struct UsersView: View {
                 .padding(.bottom, 20)
 
             List(userData.users) { user in
-                Text(user.username)
+                NavigationLink(destination: UserResultsView(username: user.username)) {
+                    Text(user.username)
+                }
             }
         }
         .padding()
@@ -27,7 +29,9 @@ struct UsersView: View {
 
 struct UsersView_Previews: PreviewProvider {
     static var previews: some View {
-        UsersView()
-            .environmentObject(UserData())
+        NavigationView {
+            UsersView()
+                .environmentObject(UserData())
+        }
     }
 }
