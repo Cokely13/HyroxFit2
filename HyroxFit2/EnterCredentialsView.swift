@@ -54,19 +54,11 @@ struct EnterCredentialsView: View {
     }
 
     func loginUser() {
-        guard let user = userData.users.first(where: { $0.username == username }) else {
-            alertMessage = "User not found."
-            showAlert = true
-            return
-        }
-
-        // This is a placeholder password check
-        // Replace with your actual password verification logic
-        if password == "password" { // Replace with actual password checking
+        if userData.authenticate(username: username, password: password) {
             authState.username = username
             authState.isAuthenticated = true
         } else {
-            alertMessage = "Incorrect password."
+            alertMessage = "Incorrect username or password."
             showAlert = true
         }
     }
@@ -79,4 +71,3 @@ struct EnterCredentialsView_Previews: PreviewProvider {
             .environmentObject(UserData())
     }
 }
-

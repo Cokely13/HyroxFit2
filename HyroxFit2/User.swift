@@ -10,6 +10,7 @@ import Foundation
 struct User: Identifiable, Codable {
     var id = UUID()
     var username: String
+    var password: String
 }
 
 class UserData: ObservableObject {
@@ -19,19 +20,26 @@ class UserData: ObservableObject {
         loadUsers()
     }
 
-    func addUser(username: String) {
-        let newUser = User(username: username)
+    func addUser(username: String, password: String) {
+        let newUser = User(username: username, password: password)
         users.append(newUser)
         saveUsers()
     }
 
-    func saveUsers() {
+    func authenticate(username: String, password: String) -> Bool {
+        if let user = users.first(where: { $0.username == username && $0.password == password }) {
+            return true
+        }
+        return false
+    }
+
+    private func saveUsers() {
         if let encoded = try? JSONEncoder().encode(users) {
             UserDefaults.standard.set(encoded, forKey: "users")
         }
     }
 
-    func loadUsers() {
+    private func loadUsers() {
         if let savedUsers = UserDefaults.standard.data(forKey: "users"),
            let decodedUsers = try? JSONDecoder().decode([User].self, from: savedUsers) {
             users = decodedUsers
