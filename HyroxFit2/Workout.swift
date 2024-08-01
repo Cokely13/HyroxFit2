@@ -12,6 +12,7 @@ struct Workout: Codable, Identifiable {
     var name: String
     var exercise: String
     var distance: Int
+    var username: String
     var results: [Result] = []
 }
 

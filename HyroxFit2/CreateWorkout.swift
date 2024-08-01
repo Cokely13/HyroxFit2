@@ -9,6 +9,8 @@ struct CreateWorkout: View {
     @State private var units: Int = 0
     @State private var navigateToConfirmation: Bool = false
 
+    @EnvironmentObject var authState: AuthState
+
     let exercises = ["Run", "Swim", "Bike", "Ski", "Row"]
     let digits = Array(0...9)
 
@@ -101,7 +103,9 @@ struct CreateWorkout: View {
     }
 
     func saveWorkout() {
-        let workout = Workout(id: UUID(), name: workoutName, exercise: selectedExercise, distance: selectedDistance)
+        guard let username = authState.username else { return }
+
+        let workout = Workout(id: UUID(), name: workoutName, exercise: selectedExercise, distance: selectedDistance, username: username)
         
         var savedWorkouts = loadWorkouts()
         savedWorkouts.append(workout)
@@ -124,6 +128,8 @@ struct CreateWorkout_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             CreateWorkout()
+                .environmentObject(AuthState())
+                .environmentObject(UserData())
         }
     }
 }

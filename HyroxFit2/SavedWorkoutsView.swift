@@ -21,9 +21,13 @@ struct SavedWorkoutsView: View {
                     VStack(alignment: .leading) {
                         Text(workout.name)
                             .font(.headline)
+                        Text("Created By: \(workout.username)")
+                            .font(.subheadline)
+                            .foregroundColor(.black)
                         Text("Exercise: \(workout.exercise)")
                         Text("Distance: \(workout.distance) meters")
                     }
+                    .padding(.vertical, 5)
                 }
             }
         }
