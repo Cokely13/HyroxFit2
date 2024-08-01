@@ -97,27 +97,25 @@ struct CreateWorkout: View {
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .padding(.bottom, 20)
 
-                NavigationLink(destination: WorkoutCreatedView(), isActive: $navigateToConfirmation) {
-                    Button(action: {
-                        validateAndSaveWorkout()
-                    }) {
-                        Text("Create Workout")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .cornerRadius(10)
-                    }
+                Button(action: {
+                    validateAndSaveWorkout()
+                }) {
+                    Text("Create Workout")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
                 }
                 .padding(.top, 20)
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
 
                 Spacer()
             }
             .padding()
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Invalid End Date"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
         }
         .navigationBarTitle("Create Workout", displayMode: .inline)
     }
@@ -125,6 +123,12 @@ struct CreateWorkout: View {
     func validateAndSaveWorkout() {
         guard let username = authState.username else { return }
 
+        if workoutName.isEmpty {
+            alertMessage = "Workout name cannot be empty."
+            showAlert = true
+            return
+        }
+        
         if endDate <= startDate {
             alertMessage = "End Date must be after the Start Date."
             showAlert = true
@@ -147,6 +151,8 @@ struct CreateWorkout: View {
         if let encoded = try? JSONEncoder().encode(savedWorkouts) {
             UserDefaults.standard.set(encoded, forKey: "savedWorkouts")
         }
+
+        navigateToConfirmation = true // Navigate to confirmation view
     }
     
     func loadWorkouts() -> [Workout] {
