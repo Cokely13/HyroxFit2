@@ -26,6 +26,8 @@ struct SavedWorkoutsView: View {
                             .foregroundColor(.black)
                         Text("Exercise: \(workout.exercise)")
                         Text("Distance: \(workout.distance) meters")
+                        Text("Start Date: \(workout.startDate, formatter: dateFormatter)")
+                        Text("End Date: \(workout.endDate, formatter: dateFormatter)")
                     }
                     .padding(.vertical, 5)
                 }
@@ -48,3 +50,10 @@ struct SavedWorkoutsView_Previews: PreviewProvider {
         SavedWorkoutsView()
     }
 }
+
+// Date formatter to format the date
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    return formatter
+}()
