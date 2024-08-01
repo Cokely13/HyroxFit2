@@ -20,6 +20,7 @@ struct RecordsView: View {
                                 Text("Exercise: \(workout.exercise)")
                                 Text("Distance: \(workout.distance) meters")
                                 Text("Fastest Time: \(record.time.hours)h \(record.time.minutes)m \(record.time.seconds)s")
+                                Text("Date: \(record.date, formatter: dateFormatter)") // Display the date of the record
                             }
                             .padding(.vertical, 5)
                         }
@@ -39,11 +40,18 @@ struct RecordsView: View {
     }
 }
 
-
-
 struct RecordsView_Previews: PreviewProvider {
     static var previews: some View {
         RecordsView()
     }
 }
+
+// Date formatter to format the date
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .short
+    return formatter
+}()
+
 
