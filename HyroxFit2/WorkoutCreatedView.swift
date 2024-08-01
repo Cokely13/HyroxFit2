@@ -26,6 +26,7 @@ struct WorkoutCreatedView: View {
             }
         }
         .padding()
+        .navigationBarBackButtonHidden(true) // Hide the back button
     }
 }
 

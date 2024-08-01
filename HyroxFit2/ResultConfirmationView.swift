@@ -30,7 +30,8 @@ struct ResultConfirmationView: View {
             Spacer()
         }
         .padding()
-        .navigationBarTitle("Result Entered", displayMode: .inline)
+        .navigationBarBackButtonHidden(true) // Hide the back button
+//        .navigationBarTitle("Result Entered", displayMode: .inline)
     }
 }
 

@@ -13,13 +13,16 @@ struct Workout: Codable, Identifiable {
     var exercise: String
     var distance: Int
     var username: String
+    var startDate: Date // Add start date
+    var endDate: Date // Add end date
     var results: [Result] = []
 }
 
 struct Result: Identifiable, Codable {
     var id = UUID()
     var time: Time
-    var username: String // Add this field to store the username
+    var username: String
+    var date: Date // Add date to track when the result was entered
 }
 
 
