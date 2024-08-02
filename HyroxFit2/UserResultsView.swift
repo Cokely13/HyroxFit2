@@ -1,10 +1,3 @@
-//
-//  UserResultsView.swift
-//  HyroxFit2
-//
-//  Created by Ryan Cokely on 7/31/24.
-//
-
 import Foundation
 import SwiftUI
 
@@ -29,6 +22,7 @@ struct UserResultsView: View {
                                     Text("Exercise: \(workout.exercise)")
                                     Text("Distance: \(workout.distance) meters")
                                     Text("Time: \(result.time.hours)h \(result.time.minutes)m \(result.time.seconds)s")
+                                    Text("Date: \(result.date, formatter: dateFormatter)")
                                 }
                                 .padding(.vertical, 5)
                             }
@@ -36,6 +30,20 @@ struct UserResultsView: View {
                     }
                 }
             }
+
+            Spacer()
+
+            // Add Home button at the bottom
+            NavigationLink(destination: MainView()) {
+                Text("Home")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.green)
+                    .cornerRadius(10)
+            }
+            .padding(.bottom, 20)
         }
         .onAppear(perform: loadWorkouts)
         .padding()
@@ -51,6 +59,17 @@ struct UserResultsView: View {
 
 struct UserResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        UserResultsView(username: "TestUser")
+        NavigationStack {
+            UserResultsView(username: "TestUser")
+        }
     }
 }
+
+// Date formatter to display the date
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .short
+    return formatter
+}()
+

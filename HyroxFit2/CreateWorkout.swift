@@ -23,101 +23,107 @@ struct CreateWorkout: View {
     }
 
     var body: some View {
-        ScrollView { // Make the view scrollable
-            VStack(alignment: .leading, spacing: 20) {
-                Text("Create Workout")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.top)
-
-                TextField("Name", text: $workoutName)
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(8)
-
-                Text("Choose Exercise")
-                    .font(.headline)
-                Picker("Choose Exercise", selection: $selectedExercise) {
-                    ForEach(exercises, id: \.self) { exercise in
-                        Text(exercise).tag(exercise)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-
-                Text("Choose Distance (meters)")
-                    .font(.headline)
-                
-                HStack {
-                    Picker("Thousands", selection: $thousands) {
-                        ForEach(digits, id: \.self) { digit in
-                            Text("\(digit)").tag(digit)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: 60, height: 150)
-
-                    Picker("Hundreds", selection: $hundreds) {
-                        ForEach(digits, id: \.self) { digit in
-                            Text("\(digit)").tag(digit)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: 60, height: 150)
-
-                    Picker("Tens", selection: $tens) {
-                        ForEach(digits, id: \.self) { digit in
-                            Text("\(digit)").tag(digit)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: 60, height: 150)
-
-                    Picker("Units", selection: $units) {
-                        ForEach(digits, id: \.self) { digit in
-                            Text("\(digit)").tag(digit)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: 60, height: 150)
-                }
-
-                Text("Selected Distance: \(selectedDistance) meters")
-                    .font(.headline)
-                
-                // Display the start date (current date) without allowing modification
-                Text("Start Date: \(startDate, formatter: dateFormatter)")
-                    .font(.headline)
-                    .padding(.bottom, 10)
-
-                // Add label for end date selection
-                Text("Select EndDate")
-                    .font(.headline)
-                
-                DatePicker("End Date", selection: $endDate, in: Date()..., displayedComponents: .date) // Ensures endDate is today or later
-                    .datePickerStyle(GraphicalDatePickerStyle())
-                    .padding(.bottom, 20)
-
-                Button(action: {
-                    validateAndSaveWorkout()
-                }) {
+        NavigationView {
+            ScrollView { // Make the view scrollable
+                VStack(alignment: .leading, spacing: 20) {
                     Text("Create Workout")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
-                .padding(.top, 20)
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                }
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding(.top)
 
-                Spacer()
+                    TextField("Name", text: $workoutName)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+
+                    Text("Choose Exercise")
+                        .font(.headline)
+                    Picker("Choose Exercise", selection: $selectedExercise) {
+                        ForEach(exercises, id: \.self) { exercise in
+                            Text(exercise).tag(exercise)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+
+                    Text("Choose Distance (meters)")
+                        .font(.headline)
+                    
+                    HStack {
+                        Picker("Thousands", selection: $thousands) {
+                            ForEach(digits, id: \.self) { digit in
+                                Text("\(digit)").tag(digit)
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(width: 60, height: 150)
+
+                        Picker("Hundreds", selection: $hundreds) {
+                            ForEach(digits, id: \.self) { digit in
+                                Text("\(digit)").tag(digit)
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(width: 60, height: 150)
+
+                        Picker("Tens", selection: $tens) {
+                            ForEach(digits, id: \.self) { digit in
+                                Text("\(digit)").tag(digit)
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(width: 60, height: 150)
+
+                        Picker("Units", selection: $units) {
+                            ForEach(digits, id: \.self) { digit in
+                                Text("\(digit)").tag(digit)
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(width: 60, height: 150)
+                    }
+
+                    Text("Selected Distance: \(selectedDistance) meters")
+                        .font(.headline)
+                    
+                    // Display the start date (current date) without allowing modification
+                    Text("Start Date: \(startDate, formatter: dateFormatter)")
+                        .font(.headline)
+                        .padding(.bottom, 10)
+
+                    // Add label for end date selection
+                    Text("Select EndDate")
+                        .font(.headline)
+                    
+                    DatePicker("End Date", selection: $endDate, in: Date()..., displayedComponents: .date) // Ensures endDate is today or later
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                        .padding(.bottom, 20)
+
+                    NavigationLink(destination: WorkoutCreatedView(), isActive: $navigateToConfirmation) {
+                        EmptyView()
+                    }
+
+                    Button(action: {
+                        validateAndSaveWorkout()
+                    }) {
+                        Text("Create Workout")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }
+                    .padding(.top, 20)
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                    }
+
+                    Spacer()
+                }
+                .padding()
             }
-            .padding()
+            .navigationBarTitle("Create Workout", displayMode: .inline)
         }
-        .navigationBarTitle("Create Workout", displayMode: .inline)
     }
 
     func validateAndSaveWorkout() {
