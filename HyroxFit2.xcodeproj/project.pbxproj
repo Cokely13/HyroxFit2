@@ -39,6 +39,7 @@
 		3C583CD02C3446F8000FA7B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C583CCF2C3446F8000FA7B2 /* Assets.xcassets */; };
 		3C583CD32C3446F8000FA7B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C583CD22C3446F8000FA7B2 /* Preview Assets.xcassets */; };
 		3CF1AFD12C6172B500341F89 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1AFD02C6172B500341F89 /* New.swift */; };
+		3CF1AFD32C62CF4C00341F89 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1AFD22C62CF4C00341F89 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		3C583CCF2C3446F8000FA7B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C583CD22C3446F8000FA7B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3CF1AFD02C6172B500341F89 /* New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
+		3CF1AFD22C62CF4C00341F89 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				3C583CCB2C3446F6000FA7B2 /* HyroxFit2App.swift */,
 				3C583CCD2C3446F6000FA7B2 /* ContentView.swift */,
+				3CF1AFD22C62CF4C00341F89 /* SettingsView.swift */,
 				3C32852D2C59A2C500C27545 /* AuthState.swift */,
 				3C32852F2C59A2EA00C27545 /* LoginView.swift */,
 				3C32853B2C5ADE1C00C27545 /* EnterCredentialsView.swift */,
@@ -250,6 +253,7 @@
 				3C32853A2C5A81AA00C27545 /* UsersView.swift in Sources */,
 				3C32852A2C54017700C27545 /* TimeExtensions.swift in Sources */,
 				3C32852C2C54048600C27545 /* ResultConfirmationView.swift in Sources */,
+				3CF1AFD32C62CF4C00341F89 /* SettingsView.swift in Sources */,
 				3C3285102C518AC700C27545 /* Heading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

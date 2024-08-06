@@ -55,9 +55,9 @@ struct EnterResultsView: View {
             }
 
             // NavigationLink without a direct button but using isActive state
-            NavigationLink(destination: ResultConfirmationView().environmentObject(authState), isActive: $navigateToConfirmation) {
-                EmptyView() // Hidden NavigationLink, only triggered by state change
-            }
+//            NavigationLink(destination: ResultConfirmationView().environmentObject(authState), isActive: $navigateToConfirmation) {
+//                EmptyView() // Hidden NavigationLink, only triggered by state change
+//            }
 
             Button(action: {
                 if saveResult() {
