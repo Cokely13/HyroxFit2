@@ -1,14 +1,19 @@
+//
+//
 //import SwiftUI
 //
 //struct NEW: View {
 //    @EnvironmentObject var authState: AuthState
-//    @Binding var workouts: [Workout] // Use a binding to modify the shared workouts array
+//    @Binding var workouts: [Workout]
 //    var workout: Workout
 //
 //    // State for entering result
 //    @State private var hours: Int = 0
 //    @State private var minutes: Int = 0
 //    @State private var seconds: Int = 0
+//
+//    // State to manage navigation
+//    @Environment(\.dismiss) var dismiss
 //
 //    var body: some View {
 //        VStack {
@@ -41,12 +46,8 @@
 //                // Save the result
 //                saveResult()
 //
-//                // Navigate back to MainView
-//                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//                   let window = windowScene.windows.first {
-//                    window.rootViewController = UIHostingController(rootView: MainView().environmentObject(authState))
-//                    window.makeKeyAndVisible()
-//                }
+//                // Navigate back to MainView using dismiss
+//                dismiss()
 //            }) {
 //                Text("Enter Result")
 //                    .font(.headline)
@@ -102,7 +103,6 @@
 //        .environmentObject(AuthState())
 //    }
 //}
-//
 
 import SwiftUI
 
@@ -117,7 +117,7 @@ struct NEW: View {
     @State private var seconds: Int = 0
 
     // State to manage navigation
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         VStack {
@@ -150,8 +150,8 @@ struct NEW: View {
                 // Save the result
                 saveResult()
 
-                // Navigate back to MainView using dismiss
-                dismiss()
+                // Navigate back to MainView using presentationMode
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Enter Result")
                     .font(.headline)
