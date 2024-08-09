@@ -1,5 +1,4 @@
 //
-//
 //import SwiftUI
 //
 //struct NEW: View {
@@ -12,8 +11,11 @@
 //    @State private var minutes: Int = 0
 //    @State private var seconds: Int = 0
 //
+//    // State to track if the result has been entered
+//    @State private var resultEntered: Bool = false
+//
 //    // State to manage navigation
-//    @Environment(\.dismiss) var dismiss
+//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 //
 //    var body: some View {
 //        VStack {
@@ -28,35 +30,58 @@
 //            Text("Exercise: \(workout.exercise)")
 //            Text("Distance: \(workout.distance) meters")
 //
-//            // Result entry fields
-//            HStack {
-//                TextField("Hours", value: $hours, formatter: NumberFormatter())
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .frame(width: 60)
-//                TextField("Minutes", value: $minutes, formatter: NumberFormatter())
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .frame(width: 60)
-//                TextField("Seconds", value: $seconds, formatter: NumberFormatter())
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .frame(width: 60)
+//            // Result entry fields (only show if result is not entered yet)
+//            if !resultEntered {
+//                HStack {
+//                    TextField("Hours", value: $hours, formatter: NumberFormatter())
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        .frame(width: 60)
+//                    TextField("Minutes", value: $minutes, formatter: NumberFormatter())
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        .frame(width: 60)
+//                    TextField("Seconds", value: $seconds, formatter: NumberFormatter())
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        .frame(width: 60)
+//                }
+//                .padding()
 //            }
-//            .padding()
 //
-//            Button(action: {
-//                // Save the result
-//                saveResult()
-//
-//                // Navigate back to MainView using dismiss
-//                dismiss()
-//            }) {
-//                Text("Enter Result")
+//            // Conditional rendering based on whether the result is entered
+//            if resultEntered {
+//                Text("Result Entered!")
 //                    .font(.headline)
-//                    .foregroundColor(.white)
+//                    .foregroundColor(.green)
 //                    .padding()
-//                    .background(Color.green)
-//                    .cornerRadius(10)
+//
+//                Button(action: {
+//                    // Navigate back to MainView using presentationMode
+//                    self.presentationMode.wrappedValue.dismiss()
+//                }) {
+//                    Text("Home")
+//                        .font(.headline)
+//                        .foregroundColor(.white)
+//                        .padding()
+//                        .background(Color.blue)
+//                        .cornerRadius(10)
+//                }
+//                .padding()
+//            } else {
+//                Button(action: {
+//                    // Save the result
+//                    saveResult()
+//
+//                    // Mark that the result has been entered
+//                    resultEntered = true
+//                }) {
+//                    Text("Enter Result")
+//                        .font(.headline)
+//                        .foregroundColor(.white)
+//                        .padding()
+//                        .background(Color.green)
+//                        .cornerRadius(10)
+//                }
+//                .padding()
 //            }
-//            .padding()
 //        }
 //    }
 //
@@ -116,6 +141,9 @@ struct NEW: View {
     @State private var minutes: Int = 0
     @State private var seconds: Int = 0
 
+    // State to track if the result has been entered
+    @State private var resultEntered: Bool = false
+
     // State to manage navigation
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -132,35 +160,58 @@ struct NEW: View {
             Text("Exercise: \(workout.exercise)")
             Text("Distance: \(workout.distance) meters")
 
-            // Result entry fields
-            HStack {
-                TextField("Hours", value: $hours, formatter: NumberFormatter())
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(width: 60)
-                TextField("Minutes", value: $minutes, formatter: NumberFormatter())
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(width: 60)
-                TextField("Seconds", value: $seconds, formatter: NumberFormatter())
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(width: 60)
+            // Result entry fields (only show if result is not entered yet)
+            if !resultEntered {
+                HStack {
+                    TextField("Hours", value: $hours, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 60)
+                    TextField("Minutes", value: $minutes, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 60)
+                    TextField("Seconds", value: $seconds, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 60)
+                }
+                .padding()
             }
-            .padding()
 
-            Button(action: {
-                // Save the result
-                saveResult()
-
-                // Navigate back to MainView using presentationMode
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Enter Result")
+            // Conditional rendering based on whether the result is entered
+            if resultEntered {
+                Text("Result Entered!")
                     .font(.headline)
-                    .foregroundColor(.white)
+                    .foregroundColor(.green)
                     .padding()
-                    .background(Color.green)
-                    .cornerRadius(10)
+
+                Button(action: {
+                    // Dismiss the current view and go back to the previous one
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Back")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+                .padding()
+            } else {
+                Button(action: {
+                    // Save the result
+                    saveResult()
+
+                    // Mark that the result has been entered
+                    resultEntered = true
+                }) {
+                    Text("Enter Result")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(10)
+                }
+                .padding()
             }
-            .padding()
         }
     }
 
